@@ -13,28 +13,28 @@ public class PrimeNumberGenerator {
         System.out.println("Welcome to the Prime Number Generator!\n"
                 + "This program will list all the prime numbers in a "
                 + "given range that YOU determine!\n"
-                + "Please enter the starting value:");
+                + "Please enter a positive integer for the starting value:");
         
         // Confirm valid integer input for starting value
         try {
             startingValue = Integer.parseInt(input.nextLine());
             
-            // Exit program upon negative integer entry
-            if (startingValue < 0) {
+            // Exit program upon 0 or negative integer entry
+            if (startingValue <= 0) {
                 System.out.println("Sorry, the starting number must be a positive integer.");
             }
             
-            // Confirm that the integer is a natural number, zero or above.
+            // Confirm that the integer is a natural number
             else {
                 System.out.println("Starting value saved as " + startingValue);
-                System.out.println("Please enter the ending value:");
+                System.out.println("Please enter a positive integer for the ending value:");
                 
                 // Confirm valid integer input for the ending value
                 try {
                     endingValue = Integer.parseInt(input.nextLine());
                     
                     // Exit program upon negative integer entry
-                    if (endingValue < 0) {
+                    if (endingValue <= 0) {
                         System.out.println("Ending value saved as " + endingValue);
                         System.out.println("Sorry, the starting number must be a positive integer.");
                     }
@@ -60,34 +60,42 @@ public class PrimeNumberGenerator {
                         /* 
                         For testing purposes:
                         Print all numbers between min and max, inclusive. 
+                        */
                         
                         System.out.println("All numbers between " + min 
                                           + " and " + max + ":");
                         p.generate(min, max).forEach(System.out::println);
-                        */
                         
-                        for (int i = min; i < p.generate(min,max).size(); i++){
+                        
+                        for (int i = min; i <= max; i++){
                             if (p.isPrime(i)){
                                 finalList.add(i);
                             }
                         }
                         
-                        System.out.println("The PRIME numbers between " + min 
-                                          + " and " + max + " are:");
-                        finalList.forEach(System.out::println);
+                        if (finalList.isEmpty()) {
+                            System.out.println("There are no prime numbers "
+                                             + "between " + max + " and " + min + ".");
+                        }
+                        else {
+                            System.out.println("The PRIME numbers between " + min 
+                                              + " and " + max + ":");
+                            finalList.forEach(System.out::println);
+                        }
+                        ////////////// END PRIME NUMBER ALGORITHM //////////////
                         
                     }
                     
                 // Ending input value was invalid    
                 } catch (Exception e) {
-                    System.out.println("Sorry, you need to enter an integer greater than or equal to 0.");
+                    System.out.println("Sorry, you need to enter an integer greater than 0.");
                     System.out.println("Error message: " + e.getMessage());
                 }
             }
         
         // Starting input value was invalid
         } catch (Exception e) {
-            System.out.println("Sorry, you need to enter an integer greater than or equal to 0.");
+            System.out.println("Sorry, you need to enter an integer greater than 0.");
             System.out.println("Error message: " + e.getMessage());
         }
     } 
