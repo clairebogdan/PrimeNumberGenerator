@@ -5,7 +5,7 @@ public class PrimeNumberGenerator {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int startingValue, endingValue;
+        int startingValue, endingValue, min, max;
         
         // Introduction & ask for starting value
         System.out.println("Welcome to the Prime Number Generator!\n"
@@ -39,9 +39,23 @@ public class PrimeNumberGenerator {
                     
                     // Confirm that the integer is a natural number, zero or above.
                     else {
-                        System.out.println("This is where we would compute the "
-                                         + "prime numbers between " + startingValue
-                                         + " and " + endingValue);
+                        
+                        //Establish min and max values
+                        if (startingValue < endingValue) {
+                            min = startingValue;
+                            max = endingValue;
+                        }
+                        else {
+                            min = endingValue;
+                            max = startingValue;
+                        }
+                        
+                        System.out.println("The prime numbers between " + min
+                                          + " and " + max + " are: ");
+                        
+                        /*
+                        * INSERT PRIME NUMBER ALGORITHM!
+                        */
                     }
                     
                 // Ending input value was invalid    
