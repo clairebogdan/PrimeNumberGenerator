@@ -24,7 +24,7 @@ public class PrimeNumberGenerator {
                 System.out.println("Sorry, the starting number must be a positive integer.");
             }
             
-            // Confirm that the integer is a natural number
+            // Ask for ending value
             else {
                 System.out.println("Please enter a positive integer for the ending value:");
                 
@@ -32,15 +32,15 @@ public class PrimeNumberGenerator {
                 try {
                     endingValue = Integer.parseInt(input.nextLine());
                     
-                    // Exit program upon negative integer entry
+                    // Exit program upon 0 or negative integer entry
                     if (endingValue <= 0) {
                         System.out.println("Sorry, the starting number must be a positive integer.");
                     }
                     
-                    // Confirm that the integer is a natural number, zero or above.
+                    // Confirm that the integer is a natural number
                     else {
                         
-                        //Establish min and max values
+                        // Establish min and max values so the range is in ascending order
                         if (startingValue < endingValue) {
                             min = startingValue;
                             max = endingValue;
@@ -52,11 +52,17 @@ public class PrimeNumberGenerator {
                         
                         ///////////// BEGIN PRIME NUMBER ALGORITHM /////////////
                         
+                        // Create PrimeList object
                         PrimeNumberInterface p = new PrimeList();
+                        
+                        // Initialize the list that will be printed to the console
                         List<Integer> finalList = new ArrayList<>();                      
                         
+                        // Assign finalList to the list of prime numbers
                         finalList = p.generate(min, max);
                         
+                        // Change output text grammatical syntax depending 
+                        // on number of elements in the finalList
                         if (finalList.isEmpty()) {
                             System.out.println("There are no prime numbers "
                                              + "between " + min + " and " + max + ".");
