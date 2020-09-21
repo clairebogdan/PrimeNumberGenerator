@@ -59,11 +59,16 @@ public class PrimeNumberGenerator {
                         
                         if (finalList.isEmpty()) {
                             System.out.println("There are no prime numbers "
-                                             + "between " + max + " and " + min + ".");
+                                             + "between " + min + " and " + max + ".");
+                        }
+                        else if (finalList.size() == 1) {
+                            System.out.println("The PRIME number between " + min 
+                                              + " and " + max + " (inclusive) is:");
+                            finalList.forEach(System.out::println);
                         }
                         else {
                             System.out.println("The PRIME numbers between " + min 
-                                              + " and " + max + " (inclusive):");
+                                              + " and " + max + " (inclusive) are:");
                             finalList.forEach(System.out::println);
                         }
                         
@@ -86,5 +91,3 @@ public class PrimeNumberGenerator {
         }
     } 
 }
-
-

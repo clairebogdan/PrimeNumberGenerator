@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PrimeList implements PrimeNumberInterface {
 
-    // Creates a list of all numbers between the min/starting and max/ending values
+    // Creates a list of prime numbers between the min/starting and max/ending values
     @Override
     public List<Integer> generate(int startingValue, int endingValue) {
               
@@ -44,5 +44,3 @@ public class PrimeList implements PrimeNumberInterface {
     }
     
 }
-
-
