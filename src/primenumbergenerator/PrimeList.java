@@ -11,14 +11,17 @@ public class PrimeList implements PrimeNumberInterface {
               
         List<Integer> list = new ArrayList<>();
     
-        for (int i = startingValue; i <= endingValue; i++) {
-            list.add(i);
+        for (int i = startingValue; i <= endingValue; i++){
+            
+            if (isPrime(i)){
+                list.add(i);
+            }
         }
-        
+
         return list;
     } 
 
-    // Checks whether or not the numbers in "list" are prime. If false, those ints are removed
+    // Checks whether or not the numbers in a list are prime
     @Override
     public boolean isPrime(int value) {
         

@@ -26,7 +26,6 @@ public class PrimeNumberGenerator {
             
             // Confirm that the integer is a natural number
             else {
-                System.out.println("Starting value saved as " + startingValue);
                 System.out.println("Please enter a positive integer for the ending value:");
                 
                 // Confirm valid integer input for the ending value
@@ -35,7 +34,6 @@ public class PrimeNumberGenerator {
                     
                     // Exit program upon negative integer entry
                     if (endingValue <= 0) {
-                        System.out.println("Ending value saved as " + endingValue);
                         System.out.println("Sorry, the starting number must be a positive integer.");
                     }
                     
@@ -55,23 +53,9 @@ public class PrimeNumberGenerator {
                         ///////////// BEGIN PRIME NUMBER ALGORITHM /////////////
                         
                         PrimeNumberInterface p = new PrimeList();
-                        List<Integer> finalList = new ArrayList<>();
+                        List<Integer> finalList = new ArrayList<>();                      
                         
-                        /* 
-                        For testing purposes:
-                        Print all numbers between min and max, inclusive. 
-                        */
-                        
-                        System.out.println("All numbers between " + min 
-                                          + " and " + max + ":");
-                        p.generate(min, max).forEach(System.out::println);
-                        
-                        
-                        for (int i = min; i <= max; i++){
-                            if (p.isPrime(i)){
-                                finalList.add(i);
-                            }
-                        }
+                        finalList = p.generate(min, max);
                         
                         if (finalList.isEmpty()) {
                             System.out.println("There are no prime numbers "
@@ -79,9 +63,10 @@ public class PrimeNumberGenerator {
                         }
                         else {
                             System.out.println("The PRIME numbers between " + min 
-                                              + " and " + max + ":");
+                                              + " and " + max + " (inclusive):");
                             finalList.forEach(System.out::println);
                         }
+                        
                         ////////////// END PRIME NUMBER ALGORITHM //////////////
                         
                     }
@@ -91,6 +76,7 @@ public class PrimeNumberGenerator {
                     System.out.println("Sorry, you need to enter an integer greater than 0.");
                     System.out.println("Error message: " + e.getMessage());
                 }
+                
             }
         
         // Starting input value was invalid
