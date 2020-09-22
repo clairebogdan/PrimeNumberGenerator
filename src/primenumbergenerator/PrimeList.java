@@ -28,24 +28,33 @@ public class PrimeList implements PrimeNumberInterface {
     @Override
     public boolean isPrime(int value) {
         
-        int temp;
-        
         // 1 is not prime
         if (value == 1) {
             return false;
         }
+        
+        // 2 and 3 are prime
+        else if (value <= 3) {
+            return true;
+        }
+        
+        // Numbers that are multiples of 2 and 3 are not prime
+        else if (value % 2 == 0 || value % 3 == 0) {
+            return false;
+        }
+        
         else {
         
-            // Check the modulo values for (value/2)
-            for (int i = 2; i <= value/2; i++) {
-                temp = value % i;
-                
-                // If value % i is 0, then value is not prime
-                if (temp == 0) {
+            // Loop through the remaining modulo values
+            // Prime numbers follow the formula 6n + 1 or 6n - 1, 
+            // with the exception of 2 and 3 (taken care of on lines 37-38). 
+            for (int i = 5; i * i <= value; i = i + 6) { 
+                if (value % i == 0 || value % (i + 2) == 0) {
                     return false;
                 }
             }
         }
+        
         // The value is prime
         return true;
     }
