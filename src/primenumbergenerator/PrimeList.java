@@ -45,8 +45,8 @@ public class PrimeList implements PrimeNumberInterface {
         
         else {
         
-            // Loop through the remaining modulo values
-            // Prime numbers follow the formula 6n + 1 or 6n - 1, 
+            // Loop through the remaining values
+            // Prime numbers follow the formula 6n + 1 or 6n - 1 
             // with the exception of 2 and 3 (taken care of on lines 37-38). 
             for (int i = 5; i * i <= value; i = i + 6) { 
                 if (value % i == 0 || value % (i + 2) == 0) {
@@ -55,7 +55,7 @@ public class PrimeList implements PrimeNumberInterface {
             }
         }
         
-        // The value is prime
+        // Value % i was never 0, thus value is prime
         return true;
     }
     

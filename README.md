@@ -15,8 +15,11 @@ Interface PrimeNumberGenerator {
 - Create unit tests that pass and provide 100% code coverage. One of the unit tests should test against the range 7900 and 7920.
 
 ## How to execute:
-1. Click the green "Code" button, then "Download Zip".
-2. Open the project in the IDE of your choice. I used NetBeans 8.2 to develop the project.
+1. Click the green "Code" button, then "Download Zip". Unzip the file to reveal the folder.
+2. Open the folder/project in the IDE of your choice that supports Java (I used NetBeans 8.2).
 3. Click Run and interact with the CLI!
+
+## Notes:
+- This program can find all prime numbers between 1 and  1 million in 13 seconds, and all prime numbers between 1 and 10 million in 64 seconds.
 
 

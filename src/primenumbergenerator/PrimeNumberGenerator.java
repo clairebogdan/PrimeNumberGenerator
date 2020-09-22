@@ -11,7 +11,6 @@ public class PrimeNumberGenerator {
         String checker1 = "1";
         String checker2 = "1";
 
-
         // Introduction & ask for starting value
         System.out.println("Welcome to the Prime Number Generator!\n"
                          + "This program will list all the prime numbers in a "
@@ -24,7 +23,6 @@ public class PrimeNumberGenerator {
             // Confirm valid integer input for starting value
             try {
                 startingValue = Integer.parseInt(input.nextLine());
-
                 
                 // Prevent the user from entering an integer at or below 0
                 if (startingValue <= 0) {
@@ -86,7 +84,7 @@ public class PrimeNumberGenerator {
                                 }
                                 
                                 // End program
-                                System.out.println("Thanks for playing!");
+                                System.out.println("DONE!");
                                 System.exit(0);
                                 
                                 ////////// END PRIME NUMBER ALGORITHM //////////
@@ -94,7 +92,7 @@ public class PrimeNumberGenerator {
                             }
 
                         // Ending input value was invalid    
-                        } catch (Exception e) {
+                        } catch (NumberFormatException e) {
                             System.out.println("Sorry, you need to enter an integer greater than 0.");
                             
                             // Allow user to try again by entering 1
@@ -109,7 +107,7 @@ public class PrimeNumberGenerator {
                 }
 
             // Starting input value was invalid
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Sorry, you need to enter an integer greater than 0.");
                 
                 // Allow user to try again by entering 1
