@@ -9,7 +9,6 @@ public class PrimeList implements PrimeNumberInterface {
     @Override
     public List<Integer> generate(int startingValue, int endingValue) {
         
-        // Initialize the list
         List<Integer> list = new ArrayList<>();
     
         // Loop through all numbers between startingValue and endingValue, inclusive
@@ -29,7 +28,6 @@ public class PrimeList implements PrimeNumberInterface {
     @Override
     public boolean isPrime(int value) {
         
-        // Initialize a temporary int value
         int temp;
         
         // 1 is not prime
